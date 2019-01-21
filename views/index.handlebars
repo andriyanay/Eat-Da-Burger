@@ -1,0 +1,58 @@
+<div class="container">
+	
+		<div class="jumbotron">
+				<h1>
+					<img id="image" src="assets/img/burger.png" style="width:200px; align: left" alt="Eat-Da-Burger App">
+					Eat-Da-Burger App </h1>
+		</div>
+
+		<div class="row">
+	    <div class="col-sm-6">
+				<h2>Burgers Available:</h2>
+
+			  		{{#each burgers}}
+			    		{{#unless this.devoured}}
+			      		<div>
+			        		{{this.burger_name}}
+
+			        		<form action="/{{this.id}}?_method=PUT" method="POST">
+			          		<input type="hidden" name="devoured" value="true">
+			          		<button class="btn" type="submit">Devour it</button>
+			        		</form>
+			      		</div>
+			    		{{/unless}}
+			  		{{/each}}
+
+	    </div>
+
+	    <div class="col-sm-6">
+				<h2>Burgers Already Eaten:</h2>
+			
+			  		{{#each burgers}}
+			    		{{#if this.devoured}}
+			      		<div>
+			        		{{this.burger_name}}
+			      		</div>
+			    		{{/if}}
+			  		{{/each}}
+			
+	    </div>
+
+  	</div>
+
+	<div class="row">
+	    <div class="center col-sm-12">
+				<h2>Add a Burger:</h2>
+					<form action="/" method="POST" style="margin-bottom: 20px">
+
+			  		<div class="form-group">
+			    		<input type="text" name="burger_name" placeholder="Add a burger here">
+			  		</div>
+			  
+			  			<button class="btn" type="submit">Submit Order</button>
+					</form>
+
+	    </div>
+  </div>
+</div>
+
