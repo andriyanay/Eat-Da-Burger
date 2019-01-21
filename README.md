@@ -6,4 +6,3 @@ User gets to submit the new burgers into database and that burger will be displa
 When user selects a burger and click the "Devour" button, the burger will be moved to the right side of the page into an appropriate category. 
 Technologies used: MySQL, Handlebars, Express, ORM, Node. 
 
-![Screenshot](screenshot.png)
